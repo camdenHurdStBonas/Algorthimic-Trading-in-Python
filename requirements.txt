@@ -1,1 +1,9 @@
-
+python-dateutil
+pandas
+numpy
+schedule
+ccxt
+scikit-learn
+hmmlearn
+requests
+logging
