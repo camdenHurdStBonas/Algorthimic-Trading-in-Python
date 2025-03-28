@@ -1,0 +1,23 @@
+# ---- Python standard ignores ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+*.swp
+*.bak
+
+# ---- Virtual env ----
+env/
+venv/
+.venv/
+
+# ---- Jupyter notebooks checkpoints ----
+.ipynb_checkpoints/
+
+# ---- OS-specific files ----
+.DS_Store
+Thumbs.db
+
+# ---- Credentials or sensitive config ----
+*.env
+credentials.json
