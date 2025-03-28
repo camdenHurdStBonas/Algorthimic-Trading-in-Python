@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
+"""
+main.py - Schedules tasks and runs the trading bot.
+"""
 import logging
 import time
 import schedule
 from threading import Thread
 from queue import Queue
 
-from trading_strategies import run_strategy, monitor_risk, monitor_account_value
-# Or import from advanced_bot if that’s your main logic
+from strategy import run_strategy
+from risk_management import monitor_risk, monitor_account_value
 
 logging.basicConfig(level=logging.INFO)
 
 def monitor_input(queue):
+    """
+    Non-blocking way to detect user 'q' input to quit.
+    """
     while True:
         user_input = input("Enter 'q' to quit:\n").strip().lower()
         if user_input == "q":
@@ -21,8 +27,11 @@ if __name__ == "__main__":
     logging.info("Starting Trading Bot...")
 
     # Example scheduling
+    # - Run the strategy daily
     schedule.every().day.at("00:01").do(run_strategy)
+    # - Check risk every 5 minutes
     schedule.every(5).minutes.do(monitor_risk)
+    # - Check account value every 5 minutes
     schedule.every(5).minutes.do(monitor_account_value)
 
     input_queue = Queue()
@@ -42,4 +51,4 @@ if __name__ == "__main__":
     except Exception as e:
         logging.error(f"Unexpected error: {e}")
     finally:
-        logging.info("Shutting down the trading bot.")
+        logging.info("Shutting down trading bot. Ensure all trades are closed properly.")
