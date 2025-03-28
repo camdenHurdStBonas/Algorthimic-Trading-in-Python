@@ -28,36 +28,23 @@ This project demonstrates how to build an **algorithmic cryptocurrency trading b
    ```bash
    git clone https://github.com/YourUsername/Algorithmic-Trading-in-Python.git
    ```
-2.	Install Dependencies
+2. **Install Dependencies**
   ```bash
   cd Algorithmic-Trading-in-Python
   pip install -r requirements.txt
   ```
-3.	Set Up Environment
-	•	Create a .env (or some config) to store your credentials (exchange, broker, etc.).
-	•	Make sure .env or other secrets are in your .gitignore.
-4.	Run the Bot
+3. **Set Up Environment**
+- Create a .env (or some config) to store your credentials (exchange, broker, etc.).
+- Make sure .env or other secrets are in your .gitignore.
+4. **Run the Bot**
    ```bash
    python src/main.py
    ```
-Folder Structure
-Algorithmic-Trading-in-Python/
-├── .gitignore
-├── LICENSE
-├── README.md
-├── requirements.txt
-└── src
-    ├── main.py
-    ├── trading_strategies.py
-    ├── data_utils.py
-    └── ...
-	•	main.py → The main entry point. Schedules tasks, runs the strategy, etc.
-	•	trading_strategies.py → Houses your strategy logic (classifiers, buy/sell signals).
-	•	data_utils.py → Functions for data fetching, cleaning, feature engineering.
-Contributing
 
-Contributions are welcome! Feel free to open issues or pull requests.
+### Contributing
 
-License
+- **Contributions are welcome! Feel free to open issues or pull requests.**
 
-MIT
+### License
+
+- **MIT**
